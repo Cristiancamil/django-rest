@@ -1,0 +1,28 @@
+Comandos utiles en linux:
+1. lsblk: lista las particinoes que tenemos en la maquina.
+2. df -h:
+    df: Muestra el uso del espacio en disco de todas las particines.
+    -h: Hace que la salida por consola sea legible para los humanos.
+3. touch: Crea un nuevo archivo.
+
+----------------------------------------------------------------------------------------------------------
+Extenciones que ayudan al desarrollo de python en VS Code.
+1. python extension pack
+2. tabnine
+
+----------------------------------------------------------------------------------------------------------
+Entornos virtuales en python ubuntu
+1. crear entorno:
+    python -m venv name
+2. activar entorno:
+    source name/bin/activate
+3. desactivar entrono:
+    deactivate
+
+----------------------------------------------------------------------------------------------------------
+Administrar paquetes
+1. listar paquetes:
+    pip freeze
+2. instalar paquetes:
+    pip install Django==3.2.8
+

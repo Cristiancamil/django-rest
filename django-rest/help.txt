@@ -1,0 +1,122 @@
+###########################################################################
+|                          PROJECT INMUEBLES                              |
+###########################################################################
+
+Description:
+    Este proyecto se utilizará para administrar: casas, apartametos, terermos, locales etc...,
+    se estarán utilizando los siguientes frameworks y bases de datos:
+    1. Django
+    2. Django Rest frameworks
+    3. Angular
+    4. PostgreSQL
+
+----------------------------------------------------------------------------------------------------------
+Django se basa en el patron de diseño MVT, Model, Views, Template.
+
+    Modelo: En esta capa se definen los métodos para crear, actualizar, eliminar u consultar
+            datos a la base de datos.
+
+    View: Esta capa es la que se encarga de comunicar la plantilla con el modelo, se podría decir que es el
+        controlador.
+
+    Template: En esta capa es donde se escribe el código HTML y con la que interactua el cliente.
+
+
+----------------------------------------------------------------------------------------------------------
+Estructura de un project en Django:
+     1. manage.py: Este archivo se encarga de ejecutar la lista de comandos para poder crear
+               nuevos archivos y aplicaciones dentro del proyecto.
+
+     2. modulos: Los modulos se conoce como aplicaciones.
+
+     3. migrations: Todas las aplicaciones tienen esta carpeta, la cual se utiliza para
+               crear y administrar las estructuras de las tablas de las BD.
+
+
+----------------------------------------------------------------------------------------------------------
+Pasos para crear un proyecto en Django
+    1. crear el proyecto:
+        * django-admin startproject name
+
+    2. crear una aplicación:
+        * python manage.py startapp nameaplication_app
+        * startapp: Se utiliza de crear aplicaciones en el proyecto.
+        * _app: Todas las aplicaciones que tengan _app pertenecen a un paquete tipo aplicación.
+
+    3. correr proyecto:
+        * python manage.py runserver
+
+    4. agregar app al project:
+        * abrir el archivo settings de la carpeta principal.
+        * buscar INSTALLED_APPS y al final agregar el nombre de la app + (,)
+
+    5. generar migracion:
+        python manage.py migrate
+
+    6.  crear superusuario:
+          * python manage.py createsuperuser
+          username: cristian1996
+          email: crca9623@gmail.com
+          password: 10231996Cl
+
+    7. Crear modelos:
+        * Los modelos se crean dentro del archivo model que se crea en las carpetas
+          de las aplicaciones, en este se define la clase del modelo, los campos
+          el tipo de campos y la cantidad de carácteres.
+
+        * Si desea agregar el modelo al modulo de administración que trae por default
+          django, se hace en el archivo admin que tambien traen las aplicaciones,
+          para ello primero se importa el modelo y despues se guarda el modelo en el admin.
+          ejemplo:
+
+            # Importando el modelo Inmueble
+            from inmuebleslist_app.models import Inmueble
+
+            # Registrando el modelo en el sitio de administración de la aplicación.
+            admin.site.register(Inmueble)
+
+        * Generar la migración del modelo es el soguiente paso a seguir, se ejecuta el comando:
+            python manage.py makemigrations
+
+        * En este paso ya queda ejecutar el comando para enviar la migración a la base de datos:
+            python manage.py migrate
+
+----------------------------------------------------------------------------------------------------------
+Instalando django-rest-framework
+    1. Instalar Django-Rest-Framework al proyecto
+        pip install django-rest-framework
+    2. Agregar django-rest-framework al archivo settings.
+        rest_framework
+
+----------------------------------------------------------------------------------------------------------
+Comandos utiles en linux:
+    1. lsblk: lista las particinoes que tenemos en la maquina.
+    2. df -h:
+       df: Muestra el uso del espacio en disco de todas las particines.
+       -h: Hace que la salida por consola sea legible para los humanos.
+    3. touch: Crea un nuevo archivo.
+
+
+----------------------------------------------------------------------------------------------------------
+Extenciones que ayudan al desarrollo de python en VS Code.
+     1. python extension pack
+     2. tabnine
+
+
+----------------------------------------------------------------------------------------------------------
+Entornos virtuales en python ubuntu
+    1. crear entorno:
+        python -m venv name
+    2. activar entorno:
+        source name/bin/activate
+    3. desactivar entrono:
+        deactivate
+
+
+----------------------------------------------------------------------------------------------------------
+Administrar paquetes
+    1. listar paquetes:
+        pip freeze
+    2. instalar paquetes:
+        pip install Django==3.2.8
+
